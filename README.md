@@ -37,10 +37,12 @@ vagrant provision
 
 ## 编程环境
     sudo -s
-    cd /home/vhost/webcms/webcms
-    source /home/virtualenvs/webcms/bin/activate
     django 没有自动安装，pip install django
     django-admin startproject webcms
+
+    cd /home/vhost/webcms/webcms
+    source /home/virtualenvs/webcms/bin/activate
+
 
     奇怪这个好像无法安装，手动运行 pip install django-bower
     python manage.py runserver 0.0.0.0:8000
@@ -61,7 +63,7 @@ vagrant provision
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
-admin:super@admin
+administrator:super@admin
 
 python manage.py migrate --fake-initial
 python manage.py migrate --database=xmuorg_db
