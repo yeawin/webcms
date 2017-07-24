@@ -28,10 +28,6 @@ vagrant provision
 可多次运行
 
 
-
-accounts#若报告unknown filesystem type 'vboxsf'，或者guest addistions 版本不一致，挂载virtualbox的VBoxGuestAddistions的套件没有安装
-mkdir /media/cdrompi
-sudo mount -t auto /dev/cdrom /media/cdrom
 #若puppet没有自动执行，可能sudo apt-get install puppet
 #no module name djangobower 访问https://django-bower.readthedocs.io/en/latest/installation.html
 #no module name MySQLdb  采用sudo apt-get install python-mysqldb，pip安装会失败
