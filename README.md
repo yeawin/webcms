@@ -5,12 +5,12 @@
 vagrant init ubuntu/xenial64; vagrant up --provider virtualbox  
 
 ssh参数
-ssh IP 192.168.56.87 Port 22 
-Username: ubuntu 
+ssh IP 192.168.56.87 Port 22  
+Username: ubuntu  
 privatekey: xxxxxx\webcms\.vagrant\machines\default\virtualbox\private_key  
 
-#若用putty等ssh登陆，需要采用puttygen将key转化为putty所支持格式
-修改密码passwd
+#若用putty等ssh登陆，需要采用puttygen将key转化为putty所支持格式  
+修改密码passwd  
 
 
 ### 执行
