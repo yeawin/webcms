@@ -49,34 +49,34 @@ vagrant provision
 
 ## 多语言
 -template
-    'django.template.context_processors.i18n',
+    'django.template.context_processors.i18n',  
 
 -Middleware
-    'django.middleware.locale.LocaleMiddleware',
-    django-admin makemessages -l zh-hans
-    django-admin makemessages -l en
-    django-admin compilemessages
+    'django.middleware.locale.LocaleMiddleware',  
+    django-admin makemessages -l zh-hans  
+    django-admin makemessages -l en  
+    django-admin compilemessages  
 
 ## 数据迁移
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
-administrator:super@admin
+python manage.py makemigrations  
+python manage.py migrate  
+python manage.py createsuperuser  
+administrator:super@admin  
 
-python manage.py migrate --fake-initial
-python manage.py migrate --database=xmuorg_db
+python manage.py migrate --fake-initial  
+python manage.py migrate --database=xmuorg_db  
 
 ## 多数据库
-http://code.ziqiangxuetang.com/django/django-multi-database.html
+http://code.ziqiangxuetang.com/django/django-multi-database.html  
 
 
 ## bower
-#https://django-bower.readthedocs.io/en/latest/installation.html
-#https://github.com/nvbn/django-bower/issues/51
-pip install django-bower
-python manage.py bower_install --allow-root
+#https://django-bower.readthedocs.io/en/latest/installation.html  
+#https://github.com/nvbn/django-bower/issues/51  
+pip install django-bower  
+python manage.py bower_install --allow-root  
 
 ## BBS
-https://github.com/vicalloy/LBForum
+https://github.com/vicalloy/LBForum  
 
 
