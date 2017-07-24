@@ -17,7 +17,9 @@ privatekey: xxxxxx\webcms\.vagrant\machines\default\virtualbox\private_key
 sudo -s
 nano /etc/apt/sources.list
 把puppet/modules/otherfile/files/sources.list内容拷贝进去
+
 apt-get update
+
 apt-get upgrade
 apt-get install virtualbox-guest-utils
 apt-get install puppet
