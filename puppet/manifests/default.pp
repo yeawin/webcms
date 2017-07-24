@@ -167,22 +167,3 @@ mysql::db { "test_$project_name":
     grant    => ['ALL'],
     require => Package["mysql-server"],
 }
-
-
-
-
-file {'/usr/share/fonts/chinese':
-      ensure => directory,
-      recurse => true,
-}
-
-file {"/usr/share/fonts/chinese/simhei.ttf":
-    ensure => present,
-    source => "puppet:///modules/otherfile/simhei.ttf",
-}
-
-exec {'fc-cache -f':
-    path => ['/usr/bin', '/usr/sbin'],
-    subscribe => File['/usr/share/fonts/chinese/simhei.ttf'],
-    refreshonly => true,
-}

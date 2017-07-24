@@ -4,3 +4,4 @@
 /webcms/components
 /webcms/webcms/*.pyc
 /webcms/yacms/__pycache__/*.pyc
+/webcms/yacms/migrations/__pycache__/*.pyc
