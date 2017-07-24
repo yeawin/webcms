@@ -4,7 +4,7 @@
 #https://atlas.hashicorp.com/ubuntu/boxes/xenial64/versions/20170509.0.0/providers/virtualbox.box  
 vagrant init ubuntu/xenial64; vagrant up --provider virtualbox  
 
-ssh参数
+### ssh参数
 ssh IP 192.168.56.87 Port 22  
 Username: ubuntu  
 privatekey: xxxxxx\webcms\.vagrant\machines\default\virtualbox\private_key  
