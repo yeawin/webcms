@@ -13,7 +13,7 @@ class { 'apt':
 
 
 $package_list = ["build-essential", 'git', 'npm', 'nodejs-legacy', 'libmysqld-dev', 'phpmyadmin', 'libaio-dev',
-     'libldap2-dev', 'libsasl2-dev', 'libssl-dev', 'libffi-dev', 'libxml2-dev', 'libxslt1-dev', 'libcairo2', 'libpangocairo-1.0-0', 'libpq-dev', 'memcached', 'freetds-dev']
+     'libldap2-dev', 'libsasl2-dev', 'libssl-dev', 'libffi-dev', 'libxml2-dev', 'libxslt1-dev', 'libcairo2', 'libpangocairo-1.0-0', 'libpq-dev', 'memcached', 'freetds-dev', 'redis-server']
 package { $package_list: ensure => latest }
 
 $package_list2 = ['python3-venv', 'python3-dev', 'python-pyodbc', 'python3-pyodbc']

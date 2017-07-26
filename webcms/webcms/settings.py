@@ -84,6 +84,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'webcms.wsgi.application'
 
+LOGIN_URL = "/"
+
+SITE_URL = 'http://192.168.56.87:8000'
+
+SITE_NAME = 'Forum'
+
+SITE_ID = ''
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
