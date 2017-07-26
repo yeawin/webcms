@@ -94,6 +94,12 @@ python::pip { 'django-axes' :
     virtualenv => $virtual_evn_dir
 }
 
+python::pip { 'django-musette' :
+    pkgname => 'django-musette',
+    ensure => latest,
+    virtualenv => $virtual_evn_dir
+}
+
 python::pip { 'python-requests' :
     pkgname => 'python-requests',
     ensure => latest,

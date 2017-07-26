@@ -37,7 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'djangobower',
+    'hitcount',
+    'endless_pagination',
+    'rest_framework',
+    'musette',
     'yacms',
 ]
 
@@ -49,6 +54,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'musette.middleware.ActiveUserMiddleware', # Necessary
+    'musette.middleware.RestrictStaffToAdminMiddleware' # If you want block admin url add this middleware
 ]
 
 ROOT_URLCONF = 'webcms.urls'
@@ -64,6 +72,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.template.context_processors.i18n',
+                'musette.context_processors.data_templates', # Necessary
             ],
         },
     },
@@ -84,6 +97,18 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
+}
+
+# CACHES
+# https://github.com/mapeveri/django-musette/blob/master/docs/configuration.rst
+CACHES = {
+        'default': {
+            'BACKEND' : 'redis_cache.RedisCache',
+            'LOCATION' : 'localhost:6379',
+            'OPTIONS' : {
+                'DB' : 1
+                }
+            }
 }
 
 
@@ -126,6 +151,7 @@ LANGUAGES = (
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
+    os.path.join(BASE_DIR + "/musette/", 'locale'),
 )
 
 
@@ -133,7 +159,15 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Bower
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',

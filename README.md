@@ -42,7 +42,7 @@ vagrant provision
     source /home/virtualenvs/webcms/bin/activate
 
 
-    奇怪这个好像无法安装，手动运行 pip install django-bower
+    django-bower 没有自动安装 pip install django-bower
     python manage.py runserver 0.0.0.0:8000
     http://192.168.56.87:8000/
 
@@ -78,5 +78,7 @@ python manage.py bower_install --allow-root
 
 ## BBS
 https://github.com/vicalloy/LBForum  
+https://github.com/mapeveri/django-musette  
+https://github.com/mapeveri/django-musette/blob/master/docs/configuration.rst  
 
 
