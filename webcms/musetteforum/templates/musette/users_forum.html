@@ -1,0 +1,56 @@
+{% load i18n %}
+{% load static %}
+{% load photo %}
+{% load forum_tags %}
+{% load endless %}
+
+{% paginate users %}
+{% for profile in users %}
+    <div class="col-md-2">
+        <div class="thumbnail">
+            <img src="{{profile.user.username|get_object_user:profile|get_photo}}" class="img-thumbnail picture" width="150" height="150" />
+            <div class="caption">
+                <span>{{ profile.user.username|get_object_user:profile|get_path_profile|safe }}</span>
+                {% if profile.user.user.is_troll %}
+                    <p> <strong><u>{% trans "It is a troll" %}</u></strong> </p>
+                {% else %}
+                    <br>
+                {% endif %}
+                
+                {% if profile.date %}
+                    <p>{% trans "Joined" %} {{profile.date.date}}</p>
+                {% else %}
+                    <p>{% trans "Moderator" %}</p>
+                {% endif %}
+                <table>
+                    <tr>
+                        <td>
+                            <b>{% trans "Last Seen" %}</b>
+                            {% with profile.user.username|get_object_user:profile as us_pr %}
+                                {% if us_pr.user.last_seen %}
+                                    {{ us_pr.user.last_seen|timesince }}
+                                {% else %}
+                                    {% trans "a while ago" %}
+                                {% endif %}
+                            {% endwith %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% with profile.user.username|get_object_user:profile as us_pr %}
+                                {% if us_pr.user.online %}
+                                    <div class="label label-success"><b>Online</b></div>
+                                {% else %}
+                                    <div class="label label-danger"><b>Offline</b></div>
+                                {% endif %}
+                            {% endwith %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% empty %}
+    <small class="text-info">{% trans "No registered users" %}.</small>
+{% endfor %}
+{% show_more %}

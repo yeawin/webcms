@@ -1,0 +1,30 @@
+{% load i18n %}
+{% load endless %}
+{% load forum_tags %}
+{% load photo %}
+
+<div class="list-group">
+    {% paginate topics  %}
+    {% for topic in topics %}
+        <div class="list-group-item">
+
+            <span class="pull-left forum-icon" style="margin-right: 5px;">
+                <a href="{% url 'topic' forum.category forum.name topic.slug topic.idtopic %}" class="btn btn-md btn-default tooltip-link">
+                    <img class="img-circle" src="{{topic.user.id|get_photo}}" alt="icon" width="30" height="30">
+                </a>
+            </span>
+
+            <h4 class="list-group-item-heading" style="margin-top: 0.5em;">
+                <a href="{% url 'topic' forum.category forum.name topic.slug topic.idtopic %}">
+                    {{ topic.title }}
+                </a>
+                <p><small>{% trans "User" %}: {{topic.user|get_path_profile|safe}}</small></p>
+                <p><small>{{ topic.date }}</small></p>
+            </h4>
+        </div>
+        <div class="list-group-separator"></div>
+    {% empty %}
+        <p class="text-info">{% trans "No results" %}.</p>
+    {% endfor %}
+    {% show_more %}
+</div>

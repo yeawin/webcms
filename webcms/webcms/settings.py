@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'hitcount',
     'endless_pagination',
     'rest_framework',
-    'musette',
-    'yacms',
+    'musetteforum',
+    # 'yacms',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +90,8 @@ SITE_URL = 'http://192.168.56.87:8000'
 
 SITE_NAME = 'Forum'
 
-SITE_ID = ''
+EMAIL_MUSETTE = 'ywliu@xmu.edu.cn'
+# SITE_ID = ''
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases

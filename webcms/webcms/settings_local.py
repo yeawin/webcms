@@ -1,1 +1,2 @@
-SITE_NAME = 'Forum'
+
+DEBUG = True

@@ -1,0 +1,23 @@
+{% extends 'musette/base_musette.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="{% url 'forums' %}">{% trans "Forums" %}</a></li>
+        <li class="active">{% trans "Notifications" %}</li>
+    </ul>
+
+    <div class="endless_page_template">
+        <div class="well">
+            <h5>{% trans "Notifications" %}</h5>
+            <div id="notifications-items" style="padding: 0px" class="panel-body" v-endless-pagination="{'paginateOnScroll': true}">
+                {% include "musette/all_notification.html" %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

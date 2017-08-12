@@ -1,0 +1,35 @@
+{% extends 'musette/base_musette.html' %}
+
+{% load i18n %}
+{% load static %}
+{% load forum_tags %}
+
+{% block content %}
+
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="{% url 'forums' %}">{% trans "Forums" %}</a></li>
+        <li><a href="{% url 'forum' forum.category forum %}">{{ forum }}</a></li>
+        <li class="active">{% trans "Forum members" %}</li>
+    </ul>
+
+    <div class="well">
+        <h4>{% trans "Forum members" %}: <a href="{% url 'forum' forum.category forum %}">{{forum}}</a></h4>
+
+        {% if forum.moderators.all.count > 1 %}
+            {% trans "Moderators" %}:
+        {% else %}
+            {% trans "Moderator" %}:
+        {% endif %}
+        <p>
+            {% for moderator in forum.moderators.all %}
+                {{ moderator|get_path_profile|safe }}
+            {% endfor %}
+        </p>
+    </div>
+    <div id="users-items"  v-endless-pagination="{'paginateOnScroll': true}">
+        {% include 'musette/users_forum.html' %}
+    </div>
+</div>
+
+{% endblock %}

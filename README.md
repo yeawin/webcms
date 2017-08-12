@@ -15,20 +15,20 @@ privatekey: xxxxxx\webcms\.vagrant\machines\default\virtualbox\private_key
 
 ### 执行
 sudo -s  
-nano /etc/apt/sources.list  
-把puppet/modules/otherfile/files/sources.list内容拷贝进去  
 apt-get update  
 apt-get upgrade  
 apt-get install virtualbox-guest-utils  
 apt-get install puppet  
+
+### host
 vagrant reload  
 vagrant provision    
 可多次运行  
 
 
-#若puppet没有自动执行，可能sudo apt-get install puppet  
-#no module name djangobower 访问https://django-bower.readthedocs.io/en/latest/installation.html  
-#no module name MySQLdb  采用sudo apt-get install python-mysqldb，pip安装会失败  
+若puppet没有自动执行，可能sudo apt-get install puppet  
+no module name djangobower 访问https://django-bower.readthedocs.io/en/latest/installation.html  
+no module name MySQLdb  采用sudo apt-get install python-mysqldb，pip安装会失败  
 
 ### http://127.0.0.1:8100/  
 
@@ -48,6 +48,7 @@ vagrant provision
 
 
 ## 多语言
+brew install gettext
 -template
     'django.template.context_processors.i18n',  
 

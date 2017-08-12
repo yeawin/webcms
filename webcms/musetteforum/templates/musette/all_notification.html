@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load endless %}
+{% load forum_tags %}
+
+<div class="list-group">
+    {% paginate notifications  %}
+    {% for notification in notifications %}
+        <div class="list-group-item">
+            {{notification|get_item_notification|safe}}
+        </div>
+    {% empty %}
+        <p>{% trans "You have no notifications" %}.</p>
+    {% endfor %}
+    {% show_more %}
+</div>

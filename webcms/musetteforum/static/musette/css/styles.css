@@ -1,0 +1,118 @@
+/*Bootstrap class override*/
+/*--------------------------------------*/
+.btn{
+  text-transform: none;
+}
+
+/* enable absolute positioning for within text box icon*/
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .fa  { left:  0px;}
+.right-addon .fa { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.dropdown {
+    display:inline-block;
+    margin-left:20px;
+    padding:10px;
+}
+
+.menu-title {
+ font-size:1.5rem;
+ display:inline-block;
+}
+
+.dropdown-menu.divider {
+  margin:5px 0;
+}
+
+/*Class musette*/
+/*--------------------------------------*/
+.black{
+  color: black;
+}
+
+.background_gray{
+  background: #F8F8F8;
+  border-color: #E7E7E7;
+  border: 2px solid #E7E7E7;
+}
+
+.item-panel{
+  padding: 10px;
+  border: 1px solid #DDD;
+  border-radius: 0px;
+  list-style-type: none;
+}
+
+.without-style-list{
+  list-style-type: none;
+}
+
+.without-text-transform{
+  text-transform: none;
+}
+
+/* Hide element */
+.hide{
+  display: none;
+}
+
+/* For that not outside textarea in div*/
+.in_div_textarea{
+  overflow: auto;
+}
+
+/* Notifications */
+.notifications {
+   min-width:420px;
+}
+
+.notifications-wrapper {
+  overflow:auto;
+  max-height:250px;
+}
+
+.notification-heading, .notification-footer  {
+ padding:2px 10px;
+}
+
+.item-title {
+ font-size:1.3rem;
+ color:#000;
+}
+
+.notifications a.content {
+ text-decoration:none;
+}
+
+.notification-item {
+ padding:10px;
+ margin:5px;
+ border-radius:4px;
+}
+
+/* Topic line user */
+.post-info-left {
+    border-right: 1px solid #eee;
+}
+
+/* Share social  */
+.social-share a {
+  margin-left: 1.5em;
+  font-size: 1.5em;
+  text-decoration: none;
+}
