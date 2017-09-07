@@ -7,3 +7,4 @@
 /webcms/yacms/migrations/__pycache__/*.pyc
 /forum/forum/wsgi.py
 /django-machina
+/forum/forum/local_settings.py
