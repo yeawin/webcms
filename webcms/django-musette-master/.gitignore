@@ -1,0 +1,15 @@
+settings_local.py
+*.pyc
+*.mo
+*.sqlite3
+migrations
+/staticfiles/
+example/media/
+/build/
+/dist/
+/django_musette.egg-info/
+/.vscode/
+/node_modules/
+webpack-stats.json
+
+!/musette/migrations/

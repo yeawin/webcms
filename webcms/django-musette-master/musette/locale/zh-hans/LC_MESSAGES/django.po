@@ -1,0 +1,892 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-13 12:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: django-musette-master/musette/admin.py:77
+#: django-musette-master/musette/admin.py:158
+#, python-format
+msgid "Successfully deleted %(count)d record/s."
+msgstr ""
+
+#: django-musette-master/musette/admin.py:113
+#: django-musette-master/musette/admin.py:194
+#, python-format
+msgid "Delete selected %(verbose_name_plural)s"
+msgstr ""
+
+#: django-musette-master/musette/admin.py:128
+#: django-musette-master/musette/models.py:81
+#: django-musette-master/musette/templates/musette/users_forum_index.html:20
+msgid "Moderators"
+msgstr ""
+
+#: django-musette-master/musette/admin.py:208
+#: django-musette-master/musette/models.py:101
+#: django-musette-master/musette/models.py:182
+#: django-musette-master/musette/models.py:239
+#: django-musette-master/musette/models.py:459
+#: django-musette-master/musette/templates/musette/profile.html:99
+#: django-musette-master/musette/templates/musette/topic_index.html:322
+msgid "Forum"
+msgstr ""
+
+#: django-musette-master/musette/admin.py:233
+msgid "Profile"
+msgstr ""
+
+#: django-musette-master/musette/forms.py:25
+#: django-musette-master/musette/forms.py:92
+msgid "Username"
+msgstr ""
+
+#: django-musette-master/musette/forms.py:54
+msgid "Username or password incorrect."
+msgstr ""
+
+#: django-musette-master/musette/forms.py:94
+#: django-musette-master/musette/templates/musette/password_reset_form.html:21
+msgid "Email"
+msgstr ""
+
+#: django-musette-master/musette/forms.py:96
+msgid "Names"
+msgstr ""
+
+#: django-musette-master/musette/forms.py:98
+msgid "Surname"
+msgstr ""
+
+#: django-musette-master/musette/forms.py:100
+msgid "Password"
+msgstr ""
+
+#: django-musette-master/musette/forms.py:102
+msgid "Repeat password"
+msgstr ""
+
+#: django-musette-master/musette/forms.py:110
+msgid "Passwords don't match"
+msgstr ""
+
+#: django-musette-master/musette/forms.py:127
+msgid "Email addresses must be unique."
+msgstr ""
+
+#: django-musette-master/musette/models.py:37
+msgid "If checked, this category will be visible only for staff"
+msgstr ""
+
+#: django-musette-master/musette/models.py:42
+#: django-musette-master/musette/models.py:70
+msgid "Category"
+msgstr ""
+
+#: django-musette-master/musette/models.py:43
+msgid "Categories"
+msgstr ""
+
+#: django-musette-master/musette/models.py:73
+msgid "Parent forum"
+msgstr ""
+
+#: django-musette-master/musette/models.py:76
+msgid "Name"
+msgstr ""
+
+#: django-musette-master/musette/models.py:77
+msgid "Position"
+msgstr ""
+
+#: django-musette-master/musette/models.py:78
+#: django-musette-master/musette/models.py:166
+#: django-musette-master/musette/models.py:254
+#: django-musette-master/musette/models.py:360
+#: django-musette-master/musette/models.py:585
+#: django-musette-master/musette/templates/musette/edit_topic.html:44
+#: django-musette-master/musette/templates/musette/new_topic.html:45
+msgid "Description"
+msgstr ""
+
+#: django-musette-master/musette/models.py:84
+#: django-musette-master/musette/models.py:249
+#: django-musette-master/musette/models.py:358
+#: django-musette-master/musette/models.py:467
+#: django-musette-master/musette/templates/musette/profile.html:100
+#: django-musette-master/musette/templates/musette/topic_index.html:323
+msgid "Date"
+msgstr ""
+
+#: django-musette-master/musette/models.py:87
+msgid "Topics count"
+msgstr ""
+
+#: django-musette-master/musette/models.py:90
+msgid "Hidden"
+msgstr ""
+
+#: django-musette-master/musette/models.py:91
+msgid "If hide the forum in the index page"
+msgstr ""
+
+#: django-musette-master/musette/models.py:94
+msgid "Check topics"
+msgstr ""
+
+#: django-musette-master/musette/models.py:95
+msgid "If the forum is moderated"
+msgstr ""
+
+#: django-musette-master/musette/models.py:102
+#: django-musette-master/musette/templates/musette/all_notification_index.html:10
+#: django-musette-master/musette/templates/musette/edit_topic.html:17
+#: django-musette-master/musette/templates/musette/forum_index.html:44
+#: django-musette-master/musette/templates/musette/forum_index.html:56
+#: django-musette-master/musette/templates/musette/new_topic.html:18
+#: django-musette-master/musette/templates/musette/topic_index.html:39
+#: django-musette-master/musette/templates/musette/topic_search_index.html:10
+#: django-musette-master/musette/templates/musette/users_forum_index.html:11
+msgid "Forums"
+msgstr ""
+
+#: django-musette-master/musette/models.py:186
+msgid "Message to inform"
+msgstr ""
+
+#: django-musette-master/musette/models.py:187
+msgid "If you want to report a message to a forum"
+msgstr ""
+
+#: django-musette-master/musette/models.py:190
+msgid "Message expires from"
+msgstr ""
+
+#: django-musette-master/musette/models.py:191
+msgid "Date from message expired"
+msgstr ""
+
+#: django-musette-master/musette/models.py:194
+msgid "Message expires to"
+msgstr ""
+
+#: django-musette-master/musette/models.py:195
+msgid "Date to message expired"
+msgstr ""
+
+#: django-musette-master/musette/models.py:199
+msgid "Message for forums"
+msgstr ""
+
+#: django-musette-master/musette/models.py:200
+msgid "Messages for forums"
+msgstr ""
+
+#: django-musette-master/musette/models.py:243
+#: django-musette-master/musette/models.py:355
+#: django-musette-master/musette/models.py:464
+#: django-musette-master/musette/templates/musette/topic_index.html:325
+#: django-musette-master/musette/templates/musette/topic_search.html:21
+msgid "User"
+msgstr ""
+
+#: django-musette-master/musette/models.py:247
+#: django-musette-master/musette/templates/musette/edit_topic.html:33
+#: django-musette-master/musette/templates/musette/forum_index.html:127
+#: django-musette-master/musette/templates/musette/new_topic.html:34
+#: django-musette-master/musette/templates/musette/profile.html:98
+#: django-musette-master/musette/templates/musette/topic_index.html:321
+msgid "Title"
+msgstr ""
+
+#: django-musette-master/musette/models.py:252
+#: django-musette-master/musette/templates/musette/forum_index.html:128
+#: django-musette-master/musette/templates/musette/topic_index.html:162
+msgid "Last activity"
+msgstr ""
+
+#: django-musette-master/musette/models.py:257
+msgid "File"
+msgstr ""
+
+#: django-musette-master/musette/models.py:261
+msgid "Closed topic"
+msgstr ""
+
+#: django-musette-master/musette/models.py:262
+msgid "If the topic is closed"
+msgstr ""
+
+#: django-musette-master/musette/models.py:265
+msgid "Moderate"
+msgstr ""
+
+#: django-musette-master/musette/models.py:266
+msgid "If the topic is moderated"
+msgstr ""
+
+#: django-musette-master/musette/models.py:269
+msgid "Top"
+msgstr ""
+
+#: django-musette-master/musette/models.py:270
+msgid "If the topic is important and it will go top"
+msgstr ""
+
+#: django-musette-master/musette/models.py:276
+#: django-musette-master/musette/models.py:350
+msgid "Topic"
+msgstr ""
+
+#: django-musette-master/musette/models.py:277
+#: django-musette-master/musette/templates/musette/forum_index.html:151
+#: django-musette-master/musette/templates/musette/index.html:17
+msgid "Topics"
+msgstr ""
+
+#: django-musette-master/musette/models.py:365
+msgid "Comment"
+msgstr ""
+
+#: django-musette-master/musette/models.py:366
+#: django-musette-master/musette/templates/musette/forum_index.html:129
+#: django-musette-master/musette/templates/musette/topic_index.html:324
+msgid "Comments"
+msgstr ""
+
+#: django-musette-master/musette/models.py:472
+msgid "Register"
+msgstr ""
+
+#: django-musette-master/musette/models.py:473
+msgid "Registers"
+msgstr ""
+
+#: django-musette-master/musette/models.py:507
+msgid "Photo"
+msgstr ""
+
+#: django-musette-master/musette/models.py:509
+#: django-musette-master/musette/templates/musette/profile.html:75
+msgid "About me"
+msgstr ""
+
+#: django-musette-master/musette/models.py:511
+#: django-musette-master/musette/templates/musette/profile.html:82
+msgid "Location"
+msgstr ""
+
+#: django-musette-master/musette/models.py:516
+#: django-musette-master/musette/templates/musette/profile.html:22
+msgid "Is troll"
+msgstr ""
+
+#: django-musette-master/musette/models.py:517
+msgid "If the user is troll"
+msgstr ""
+
+#: django-musette-master/musette/models.py:520
+msgid "Receive Emails"
+msgstr ""
+
+#: django-musette-master/musette/models.py:521
+msgid "If receive Emails"
+msgstr ""
+
+#: django-musette-master/musette/models.py:575
+msgid "Logo width"
+msgstr ""
+
+#: django-musette-master/musette/models.py:576
+#: django-musette-master/musette/models.py:580
+msgid "In pixels"
+msgstr ""
+
+#: django-musette-master/musette/models.py:579
+msgid "Logo height"
+msgstr ""
+
+#: django-musette-master/musette/models.py:583
+msgid "Custom design"
+msgstr ""
+
+#: django-musette-master/musette/models.py:586
+msgid "Keywords"
+msgstr ""
+
+#: django-musette-master/musette/models.py:589
+msgid "Configuration"
+msgstr ""
+
+#: django-musette-master/musette/models.py:590
+msgid "Configurations"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/admin/confirm_delete.html:6
+#: django-musette-master/musette/templates/musette/password_reset_complete.html:6
+msgid "Home"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/admin/confirm_delete.html:14
+msgid "Delete multiple objects"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/admin/confirm_delete.html:22
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/admin/confirm_delete.html:32
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/admin/confirm_delete.html:44
+msgid "Confirm deletion"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/admin/confirm_delete.html:46
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/admin/confirm_delete.html:58
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/all_notification.html:12
+#: django-musette-master/musette/templates/musette/notification.html:56
+msgid "You have no notifications"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/all_notification_index.html:11
+#: django-musette-master/musette/templates/musette/all_notification_index.html:16
+#: django-musette-master/musette/templates/musette/notification.html:17
+msgid "Notifications"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/base_musette.html:81
+#: django-musette-master/musette/templates/musette/confirm_email.html:22
+#: django-musette-master/musette/templates/musette/login.html:11
+#: django-musette-master/musette/templates/musette/password_reset_complete.html:21
+msgid "Log in"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/base_musette.html:82
+#: django-musette-master/musette/templates/musette/signup.html:12
+msgid "Sign up"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/base_musette.html:94
+msgid "Your browser does not support JavaScript."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/base_musette.html:95
+msgid "Some features may not work correctly."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/confirm_email.html:12
+#: django-musette-master/musette/templates/musette/password_reset_complete.html:17
+msgid "Congratulations"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/confirm_email.html:15
+#: django-musette-master/musette/templates/musette/confirm_email_expired.html:21
+msgid "Confirmation email"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/confirm_email.html:17
+msgid "Congratulations, you are now an active member of "
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/confirm_email.html:19
+msgid "Thank you: "
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/confirm_email_expired.html:13
+msgid "Please, check your email."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/confirm_email_expired.html:18
+#: django-musette-master/musette/templates/musette/confirm_email_expired.html:23
+msgid "The activation key has expired"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/confirm_email_expired.html:25
+msgid "Please click the following button to get a new activation key."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/confirm_email_expired.html:29
+msgid "New activation key"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/edit_profile.html:13
+#: django-musette-master/musette/templates/musette/profile.html:69
+msgid "Edit profile"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/edit_profile.html:22
+#: django-musette-master/musette/templates/musette/edit_topic.html:71
+#: django-musette-master/musette/templates/musette/new_topic.html:72
+msgid "Save"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/edit_topic.html:19
+#: django-musette-master/musette/templates/musette/edit_topic.html:24
+msgid "Edit topic"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/edit_topic.html:57
+#: django-musette-master/musette/templates/musette/new_topic.html:58
+msgid "Attachment"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum.html:23
+#: django-musette-master/musette/templates/musette/topic_index.html:96
+msgid "This topic is closed"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum.html:29
+#: django-musette-master/musette/templates/musette/forum_index.html:130
+msgid "Views"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum.html:36
+msgid "By"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:75
+msgid "The forum "
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:75
+msgid "is pending moderation"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:87
+#: django-musette-master/musette/templates/musette/new_topic.html:20
+msgid "New topic"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:94
+msgid "Unregister"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:101
+msgid "Join to forum"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:110
+#: django-musette-master/musette/templates/musette/topic_search_index.html:12
+#: django-musette-master/musette/templates/musette/topic_search_index.html:17
+msgid "Find Topics"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:140
+#: django-musette-master/musette/templates/musette/index.html:19
+msgid "Created"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:143
+#: django-musette-master/musette/templates/musette/forum_index.html:145
+msgid "This forum has"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:143
+#: django-musette-master/musette/templates/musette/topic_index.html:146
+msgid "views"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:145
+#: django-musette-master/musette/templates/musette/topic_index.html:148
+msgid "view"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:150
+#: django-musette-master/musette/templates/musette/users_forum_index.html:13
+#: django-musette-master/musette/templates/musette/users_forum_index.html:17
+msgid "Forum members"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/forum_index.html:156
+msgid "Missing for moderate"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/index.html:18
+#: django-musette-master/musette/templates/musette/topic_index.html:150
+msgid "Users"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/index.html:46
+msgid "There are no forums"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/index.html:51
+msgid "Please, you add forums and categories in the administrator."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/login.html:41
+msgid "Forgot password?"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/login.html:43
+msgid "Sign in"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/new_topic.html:25
+msgid "Add"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/notification.html:35
+#: django-musette-master/musette/templatetags/forum_tags.py:197
+msgid "created the topic:"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/notification.html:38
+#: django-musette-master/musette/templatetags/forum_tags.py:186
+msgid "commented on:"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/notification.html:41
+#: django-musette-master/musette/templates/musette/topic_index.html:202
+msgid "Now"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/notification.html:64
+msgid "All"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/notification.html:67
+msgid "Logout"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_complete.html:7
+msgid "Password reset"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_complete.html:19
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_confirm.html:15
+msgid "Change password"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_confirm.html:19
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_confirm.html:23
+msgid "New password"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_confirm.html:31
+msgid "Confirm password"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_confirm.html:37
+msgid "Change my password"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_confirm.html:49
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_email.html:2
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_email.html:8
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_email.html:10
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_email.html:12
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_form.html:13
+msgid "Reset password"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_form.html:31
+msgid "Submit"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/password_reset_subject.txt:3
+#, python-format
+msgid ""
+"Password reset for email %(email)s. Follow the link below: %(protocol)s://"
+"%(domain)s"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/profile.html:30
+#: django-musette-master/musette/templates/musette/topic.html:37
+#: django-musette-master/musette/templates/musette/topic_index.html:64
+#: django-musette-master/musette/templates/musette/users_forum.html:15
+msgid "It is a troll"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/profile.html:36
+msgid "It is not a troll"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/profile.html:43
+#: django-musette-master/musette/templates/musette/users_forum.html:21
+msgid "Joined"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/profile.html:47
+#: django-musette-master/musette/templates/musette/topic.html:45
+#: django-musette-master/musette/templates/musette/topic_index.html:71
+#: django-musette-master/musette/templates/musette/topic_index.html:216
+#: django-musette-master/musette/templates/musette/users_forum.html:28
+msgid "Last Seen"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/profile.html:51
+#: django-musette-master/musette/templates/musette/topic.html:49
+#: django-musette-master/musette/templates/musette/topic_index.html:75
+#: django-musette-master/musette/templates/musette/users_forum.html:33
+msgid "a while ago"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/signup.html:13
+msgid "Create a free account."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/signup.html:61
+msgid ""
+"By clicking Create my account, you agree to our Terms and that you have read "
+"our Data Use Policy, including our Cookie Use."
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/signup.html:64
+msgid "Create my account"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic.html:86
+#: django-musette-master/musette/templates/musette/topic_index.html:155
+msgid "Edit"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic.html:89
+msgid "Remove"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic.html:103
+#: django-musette-master/musette/templates/musette/topic.html:116
+msgid "Edit comment"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic.html:140
+#: django-musette-master/musette/templates/musette/topic.html:148
+msgid "Remove comment"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic.html:143
+msgid "Do you want remove this comment?"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:146
+#: django-musette-master/musette/templates/musette/topic_index.html:148
+msgid "This topic has"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:157
+#: django-musette-master/musette/templates/musette/topic_index.html:272
+msgid "Delete"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:164
+msgid "Share"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:169
+msgid "Close topic"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:172
+msgid "Open topic"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:217
+msgid "minutes"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:250
+msgid "New comment"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:265
+msgid "Delete topic"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:268
+msgid "Do you want to remove the topic?"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:289
+msgid "Share topic"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_index.html:312
+msgid "Suggested Topics"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/topic_search.html:27
+msgid "No results"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/users_forum.html:23
+#: django-musette-master/musette/templates/musette/users_forum_index.html:22
+msgid "Moderator"
+msgstr ""
+
+#: django-musette-master/musette/templates/musette/users_forum.html:54
+msgid "No registered users"
+msgstr ""
+
+#: django-musette-master/musette/utils.py:207
+#: django-musette-master/musette/utils.py:209
+#: django-musette-master/musette/utils.py:213
+msgid "ago"
+msgstr ""
+
+#: django-musette-master/musette/utils.py:213
+msgid "days ago"
+msgstr ""
+
+#: django-musette-master/musette/utils.py:284
+#, python-format
+msgid ""
+"Thank you for joining to %(site)s please enter to confirm your email to this "
+"address:"
+msgstr ""
+
+#: django-musette-master/musette/utils.py:291
+msgid "Welcome to "
+msgstr ""
+
+#: django-musette-master/musette/utils.py:312
+#, python-format
+msgid "New comment in %(site)s"
+msgstr ""
+
+#: django-musette-master/musette/utils.py:316
+#, python-format
+msgid "You have one new comment in the topic: %(site)s"
+msgstr ""
+
+#: django-musette-master/musette/utils.py:343
+#, python-format
+msgid "New topic in %(site)s "
+msgstr ""
+
+#: django-musette-master/musette/utils.py:344
+#, python-format
+msgid "You have one new topic to moderate: %(site)s"
+msgstr ""
+
+#: django-musette-master/musette/validators.py:18
+msgid "Files allowed"
+msgstr ""
+
+#: django-musette-master/musette/views.py:64
+msgid "The user is not active"
+msgstr ""
+
+#: django-musette-master/musette/views.py:109
+msgid ""
+"Registration was successful. Please, check your email to validate the "
+"account."
+msgstr ""
+
+#: django-musette-master/musette/views.py:115
+#: django-musette-master/musette/views.py:470
+#: django-musette-master/musette/views.py:572
+#: django-musette-master/musette/views.py:1148
+msgid "Invalid form"
+msgstr ""
+
+#: django-musette-master/musette/views.py:190
+msgid "Please, check your email"
+msgstr ""
+
+#: django-musette-master/musette/views.py:465
+#, python-format
+msgid "The topic '%(topic)s' was successfully created"
+msgstr ""
+
+#: django-musette-master/musette/views.py:567
+#, python-format
+msgid "The topic '%(topic)s' was successfully edited"
+msgstr ""
+
+#: django-musette-master/musette/views.py:606
+#, python-format
+msgid "The topic '%(topic)s' was successfully deleted"
+msgstr ""
+
+#: django-musette-master/musette/views.py:811
+msgid "Added new comment"
+msgstr ""
+
+#: django-musette-master/musette/views.py:814
+msgid "Field required"
+msgstr ""
+
+#: django-musette-master/musette/views.py:845
+msgid "Comment edited"
+msgstr ""
+
+#: django-musette-master/musette/views.py:874
+msgid "Comment deleted"
+msgstr ""
+
+#: django-musette-master/musette/views.py:942
+msgid "You have successfully registered"
+msgstr ""
+
+#: django-musette-master/musette/views.py:970
+msgid "Registration was successfully canceled"
+msgstr ""
+
+#: django-musette-master/musette/views.py:1144
+msgid "Your profile was successfully edited"
+msgstr ""

@@ -1,0 +1,95 @@
+{% extends 'musette/base_musette.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block extra_js %}
+	<!-- For TinyMce -->
+    {{ form.media.js }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container" id="topic-form-controller">
+
+	<div class="mainbox col-md-10 col-sm-6 col-sm-offset-1">
+		<ul class="breadcrumb">
+          	<li><a href="{% url 'forums' %}">{% trans "Forums" %}</a></li>
+          	<li><a href="{% url 'forum' category forum %}">{{forum}}</a></li>
+          	<li class="active">{% trans "Edit topic" %}</li>
+      	</ul>
+
+		<div class="panel panel-default" >
+            <div class="panel-heading">
+                <div class="panel-title text-center">{% trans "Edit topic" %}</div>
+            </div>
+
+            <div class="panel-body">
+            	<form action="{{request.get_full_path}}" method="POST" enctype="multipart/form-data" name="editTopic">
+            		{% csrf_token%}
+            		{% for field in form %}
+			   			{% if field.name == "title" %}
+			   				<div class="form-group" v-bind:class="{ 'has-error' : !title && touchTitle }">
+				   				<label>{% trans "Title" %}</label>
+				              	{{ field }}
+				              	{% if form.title.errors %}
+				              		<div style="color: red">{{ form.title.errors }}</div>
+				              	{% else %}
+				              		<br>
+				              	{% endif %}
+			              	</div>
+			            {% endif %}
+			            {% if field.name == "description" %}
+			            	<div class="form-group" v-bind:class="{ 'has-error' : !title && touchDescription }">
+				            	<label>{% trans "Description" %}</label>
+				            	<div class="in_div_textarea">
+				              		{{ field }}
+				              	</div>
+				              	{% if form.description.errors %}
+				              		<div style="color: red">{{ form.description.errors|safe }}</div>
+				              	{% else %}
+				              		<br>
+				              	{% endif %}
+			              	</div>
+			            {% endif %}
+			          	{% if field.name == "attachment" %}
+			          		<div class="form-group">
+				            	<label>{% trans "Attachment" %}</label>
+				            	<div class="in_div_textarea">
+				              		{{ field }}
+				              	</div>
+				              	{% if form.attachment.errors %}
+				              		<div style="color: red">{{ form.attachment.errors }}</div>
+				              	{% else %}
+				              		<br>
+				              	{% endif %}
+			              	</div>
+			            {% endif %}
+			        {% endfor %}
+			        <button type="submit" class="btn btn-inverse btn-sm" :disabled="(!title || !description) || (title.trim() == '' || description.replace(/<(?:.|\n)*?>/gm, '').replace(/&nbsp;/gi,'').trim() == '')" v-on:click="loading()">
+			        	<i class="fa fa-floppy-o"></i>
+			        	{% trans "Save" %}
+			        </button> <img src="{% static 'musette/img/ajax.gif' %}" class="hide" />
+				</form>
+            </div>
+        </div>
+	</div>
+</div>
+
+<script>
+	(function() {
+		// rendered by server
+		window.__FORM__ = {
+			//Title model form add/edit topic
+			title: '{{ form.title.value }}',
+			//Touch title model form add/edit topic
+			touchTitle: false,
+			//Description model form add/edit topic
+			description: '{{ form.description.value|safe|escapejs }}',
+			//Touch description model form add/edit topic
+			touchDescription: false,
+		}
+	})();
+</script>
+
+{% endblock %}

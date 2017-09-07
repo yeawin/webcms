@@ -1,0 +1,8 @@
+{% load i18n %}
+
+<h4>{% trans "company" %}</h4>
+<div class="panel panel-default">
+    <div class="panel-body">
+        {{ profile.company|default_if_none:''|safe }}
+    </div>
+</div>

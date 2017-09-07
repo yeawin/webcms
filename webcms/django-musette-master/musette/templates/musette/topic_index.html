@@ -1,0 +1,349 @@
+{% extends 'musette/base_musette.html' %}
+
+{% load i18n %}
+{% load static %}
+{% load forum_tags %}
+{% load hitcount_tags %}
+
+{% block extra_js %}
+    {{form_comment.media.js}}
+    <script type="text/javascript">
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
+{% endblock %}
+
+{% block meta %}
+    <meta property="og:title" content="{{ topic.forum.name }} - {{ topic.title }}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:type" content="website">
+    <meta name="twitter:url" content="{{ request.build_absolute_uri }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ topic.forum.name }} - {{ topic.title }}">
+    <meta name="description" content="{{ topic.description }}">
+    <meta property="og:description" content="{{ topic.description }}">
+    <meta name="twitter:description" content="{{ topic.description }}">
+
+    <title> {{ topic.forum.name }} - {{ topic.title }} </title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container" id="topic-controller">
+
+  {% get_hit_count for topic as total_hits %}
+
+  <div>
+    <div class="col-md-12">
+        <div>
+          <ul class="breadcrumb">
+              <li><a href="{% url 'forums' %}">{% trans "Forums" %}</a></li>
+              <li><a href="{% url 'forum' topic.forum.category topic.forum.name %}">{{topic.forum.name}}</a></li>
+              <li class="active">{{ topic.title }}</li>
+          </ul>
+        </div>
+
+        <article class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="panel panel-default arrow left">
+              <div class="panel-heading">
+                <h3 class="panel-title"> 
+                   {{topic.title}}
+                    {% if topic.is_top %}
+                    <i class="fa fa-thumb-tack"></i>
+                    {% endif %}
+                    </h3>
+              </div>
+              <div class="panel-body">
+
+                <div class="pull-left col-md-2 post-info-left">
+                  <figure class="thumbnail">
+                        <img src="{{ photo }}" class="img-responsive" width="150" hegiht="150" />
+                      <figcaption class="text-center">{{topic.user|get_path_profile|safe}}</figcaption>
+                      {% if topic.user.user.is_troll %}
+                          <center>
+                            <p> <strong><u>{% trans "It is a troll" %}</u></strong> </p>
+                          </center>
+                      {% endif %}
+                  </figure>
+                  <table>
+                    <tr>
+                        <td>
+                            <b>{% trans "Last Seen" %}</b>
+                            {% if topic.user.user.last_seen %}
+                                {{ topic.user.user.last_seen|timesince }}
+                            {% else %}
+                                {% trans "a while ago" %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% if topic.user.user.online %}
+                                <div class="label label-success"><b>Online</b></div>
+                            {% else %}
+                                <div class="label label-danger"><b>Offline</b></div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div class="col-md-8">
+                  <!-- Close topic -->
+                  <div id="close_topic" {% if not topic.is_close %} style="display: none" {% endif %}>
+                    <p style="color: red">
+                      <i class="fa fa-times" aria-hidden="true"></i> 
+                      <strong>{% trans "This topic is closed" %}</strong>
+                    </p>
+                    <hr />
+                  </div>
+
+                  <div class="comment-post">
+                      {{topic.description|safe }}
+                      
+                      {% if topic.attachment %}
+                        <img src="{{MEDIA_URL}}{{topic.attachment}}" class="img-responsive" />
+                      {% endif %}
+                    <hr>
+                  </div>
+                  <div class="pull-left">
+                    <span> 
+                      <i class="fa fa-comments" aria-hidden="true"></i> 
+                      <span id="total_comments_topic"> {{ topic.idtopic|get_tot_comments }} </span>
+                    </span>
+                    
+                    {% if user.id %}
+                      {% if topic|check_like_topic:user %}
+                        <span id="like_topic_button" style="margin-left: 1em; cursor: pointer;" v-on:click="like_topic({{topic.idtopic}})"> 
+                          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                          <span> {{ topic.like }}</span>
+                        </span>
+
+                        <span id="unlike_topic_button" style="margin-left: 1em; cursor: pointer;font-weight: bold;display:none" v-on:click="unlike_topic({{topic.idtopic}})"> 
+                          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                          <span><u> {{ topic.like }} </u></span>
+                        </span>
+                      {% else %}
+                        <span id="like_topic_button" style="margin-left: 1em; cursor: pointer;display:none" v-on:click="like_topic({{topic.idtopic}})"> 
+                          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                          <span> {{ topic.like }}</span>
+                        </span>
+
+                        <span id="unlike_topic_button" style="margin-left: 1em; cursor: pointer;font-weight: bold;" v-on:click="unlike_topic({{topic.idtopic}})"> 
+                          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                          <span><u> {{ topic.like }} </u></span>
+                        </span>
+                      {% endif %}
+                       
+                    {% else %}
+                      <span style="margin-left: 1em;"> 
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <span> {{ topic.like }}</span>
+                      </span>
+                    {% endif %}
+
+                    {% if total_hits|add:"0" > 1 %}
+                      <p style="margin-top: 5px;">{% trans "This topic has" %} {{ total_hits }} {% trans "views" %}</p>
+                    {% else %}
+                      <p style="margin-top: 5px;">{% trans "This topic has" %} {{ total_hits }} {% trans "view" %}</p>
+                    {% endif %}
+                    <p><b><u>{% trans "Users" %}</u></b> {{topic|get_tot_users_comments|safe}} </p>
+
+                    {% if topic.user.id == user.id and not user.user.is_troll %}
+                      <br>
+                      <button onclick="document.location ='{% url 'edittopic' topic.forum.category topic.forum.name topic.idtopic %}'" class="btn btn-inverse btn-xs" style="min-width: 8em">
+                        <i class="fa fa-hand-o-up"></i> {% trans "Edit" %}</button>
+                      <a style="cursor: pointer; min-width: 8em; margin-top: 0em" data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-xs">
+                        <i class="fa fa-trash"></i> {% trans "Delete" %}</a>
+                    {% endif %}
+                  </div>
+                  <div class="pull-right">
+                    <p>{{topic.date}}</p>
+                    <span><strong>{% trans "Last activity" %}</strong> {{topic|get_last_activity|safe}}</span>
+                    <a class="btn btn-default" style="cursor: pointer" data-toggle="modal" data-target="#modelTopicShared">
+                      <i class="fa fa-share"></i> {% trans "Share" %}
+                    </a>
+
+                    {% if topic.user == user and not user.user.is_troll %}
+                      <a class="btn btn-default" id="close_topic_button" {% if topic.is_close %} style="display: none" {% endif %} v-on:click="close_topic({{ topic.idtopic }}, {{user.id}})">
+                        <i class="fa fa-times"></i> {% trans "Close topic" %}
+                      </a>
+                      <a class="btn btn-default" id="open_topic_button" {% if not topic.is_close %} style="display: none" {% endif %} v-on:click="open_topic({{ topic.idtopic }}, {{user.id}})">
+                        <i class="fa fa-times"></i> {% trans "Open topic" %}
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+    </div>
+  </div>
+
+  <br>
+
+  <div id="data-template" class="endless_page_template" v-endless-pagination="{'paginateOnScroll': true, 'paginateOnScrollMargin': 550}">
+      {% include "musette/topic.html" %}
+  </div>
+
+  {% comment %} Real time comment with Vue {% endcomment %}
+  <input type="hidden" name="topic_id_ws" id="topic_musette" value="{{topic.idtopic}}" />
+
+  {% verbatim %}
+    <article v-for="comment in comments_socket">
+        <div class="col-lg-12">
+          <div class="panel panel-default arrow left">
+            <div class="panel-body">
+              <header class="text-left">
+                <time class="comment-date"><i class="fa fa-clock-o"></i>
+                {% endverbatim %} {% trans "Now" %} {% verbatim %}</time>
+              </header>
+              <div class="comment-post">
+                <div class="well" style="margin-top: 5px" v-html="comment.description">
+                </div>
+                <span>
+                    <a v-bind:href="'/profile/' + comment.username">
+                         <img class="img-circle" v-bind:src="comment.photo"
+                         width="30" height="30" />
+                    </a>
+                    <a v-bind:href="'/profile/' + comment.username">{{ comment.username }}</a>
+                    <br>
+                    <div class="label label-success"><b>Online</b></div>
+
+                    <b>{% endverbatim %} {% trans "Last Seen" %} {% verbatim %}</b>
+                    {% endverbatim %} 0 {% trans "minutes" %} {% verbatim %}
+                </span>
+              </div>
+            </div>
+          </div>
+       </div>
+      </article>
+  {% endverbatim %}
+
+  {% if comments.count > 0 %}
+  <hr>
+  {% endif %}
+
+  <!-- New comment-->
+  {% if user.id != None and not topic.is_close and not user.user.is_troll %}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <form action="{% url 'newcomment' topic.forum.category topic.forum.name topic.slug topic.idtopic %}" name="formComment" method="POST" class="well">{% csrf_token%}
+            <center>
+            {% for field in form_comment %}
+              {% if field.name == "description" %}
+                  <div class="form-group">
+                    <div class="in_div_textarea">
+                      {{ field }}
+                    </div>
+                    {% if form_comment.description.errors %}
+                      <div style="color: red">{{ form_comment.description.errors }}</div>
+                    {% endif %}
+                  </div>
+              {% endif %}
+            {% endfor %}
+            </center>
+            <button type="submit" class="btn btn-inverse btn-sm" :disabled="!description || description.replace(/<(?:.|\n)*?>/gm, '').replace(/&nbsp;/gi,'').trim() == ''" v-on:click="loading()">
+                <i class="fa fa-plus"></i> {% trans "New comment" %}
+            </button> <img src="{% static 'musette/img/ajax.gif' %}" class="hide" />
+          </form>
+        </div>
+    </div>
+  {% endif %}
+
+  {% if topic.user.id == user.id %}
+
+    <!-- Modal remove topic-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">{% trans "Delete topic" %}</h4>
+          </div>
+          <div class="modal-body">
+            {% trans "Do you want to remove the topic?" %}
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-danger" v-on:click="delete_topic('{{topic.forum.category.name}}', '{{topic.forum.name}}', {{topic.idtopic}})">
+                  <i class="fa fa-trash"></i> {% trans "Delete" %}
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+
+</div>
+
+<!-- Modal topic share -->
+<div class="modal fade" id="modelTopicShared" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{% trans "Share topic" %}</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" onClick="this.select();" value="{{ request.build_absolute_uri }}" />
+      </div>
+      <div class="modal-footer social-share">
+        <a href="http://www.facebook.com/sharer.php?s=100&amp;p%5Burl%5D={{ request.build_absolute_uri }}" target="_blank">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://plus.google.com/share?url={{ request.build_absolute_uri }}" target="_blank">
+          <i class="fa fa-google-plus"></i>
+        </a>
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{ request.build_absolute_uri }}">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+ {% if suggest %}
+    <div class="container">
+      <h4>
+        {% trans "Suggested Topics" %}
+      </h4>
+
+      <hr />
+      
+      <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th><i class="fa fa-map-o" aria-hidden="true"></i> {% trans "Title" %}</th>
+                    <th><i class="fa fa-square"></i> {% trans "Forum" %}</th>
+                    <th><i class="fa fa-history" aria-hidden="true"></i> {% trans "Date" %}</th>
+                    <th><i class="fa fa-comments" aria-hidden="true"></i> {% trans "Comments" %}</th>
+                    <th><i class="fa fa-user" aria-hidden="true"></i> {% trans "User" %}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for topic in suggest %}
+                    <tr>
+                      <td> <a href="{% url 'topic' topic.forum.category topic.forum topic.slug topic.pk %}"> {{ topic.title }} </a> </td>
+                      <td> <a href="{% url 'forum' topic.forum.category topic.forum  %}">{{topic.forum.name }} </a></td>
+                      <td> {{topic.date.date }} </td>
+                      <td> {{ topic.idtopic|get_tot_comments }} </td>
+                      <td> {{topic.user|get_path_profile|safe}} </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+  {% endif %}
+
+{% endblock %}
+
+{% block hitcount_javascript %}
+{% insert_hit_count_js_variables for topic %}
+
+{% endblock %}
+

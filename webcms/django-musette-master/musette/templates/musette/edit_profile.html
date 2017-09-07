@@ -1,0 +1,50 @@
+{% extends 'musette/base_musette.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+	<div class="mainbox col-md-10 col-sm-6 col-sm-offset-1">
+		<div class="panel panel-default" >
+            <div class="panel-heading">
+                <div class="panel-title text-center">{% trans "Edit profile" %}</div>
+            </div>
+
+            <div class="panel-body">
+            	<form action="{{request.get_full_path}}" method="POST" enctype="multipart/form-data" name="editProfile">
+            		{% csrf_token%}
+            		{{ form.as_p }}
+			        <button type="submit" class="btn btn-inverse btn-sm">
+			        	<i class="fa fa-floppy-o"></i>
+			        	{% trans "Save" %}
+			        </button>
+				</form>
+            </div>
+        </div>
+	</div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<!-- For TinyMce -->
+{{ form.media.js }}
+
+<script src="http://maps.googleapis.com/maps/api/js?libraries=places&key={{ SETTINGS.GOOGLE_MAPS_API_KEY}}" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function initialize() {
+        var options = {
+            types: ['(regions)']
+        };
+        var input = document.getElementById('id_location');
+        var autocomplete = new google.maps.places.Autocomplete(input , options);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+{% endblock %}

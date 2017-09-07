@@ -1,0 +1,24 @@
+{% extends 'musette/base_musette.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+	<ul class="breadcrumb">
+		<li><a href="{% url 'forums' %}">{% trans "Forums" %}</a></li>
+		<li><a href="{% url 'forum' forum.category forum %}">{{forum}}</a></li>
+		<li class="active">{% trans "Find Topics" %}</li>
+	</ul>
+
+	<div class="endless_page_template">
+		<div class="well">
+	        <h5>{% trans "Find Topics" %}</h5>
+	        <div id="search-items" style="padding: 0px" class="panel-body" v-endless-pagination="{'paginateOnScroll': true, 'paginateOnScrollMargin': 180}">
+	        	{% include "musette/topic_search.html" %}
+	        </div>
+	    </div>
+	</div>
+</div>
+{% endblock %}

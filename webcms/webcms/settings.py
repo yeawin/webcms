@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+from django.utils.translation import ugettext_lazy as _
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -42,7 +45,7 @@ INSTALLED_APPS = [
     'hitcount',
     'endless_pagination',
     'rest_framework',
-    'musetteforum',
+    'musette',
     # 'yacms',
 ]
 
@@ -64,7 +67,11 @@ ROOT_URLCONF = 'webcms.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # BASE_DIR + '/templates/',
+            # os.path.join(BASE_DIR, "plantillas"),
+            # os.path.join(BASE_DIR, "/templates"),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,8 +149,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hans'
-
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
@@ -152,13 +157,25 @@ USE_L10N = True
 
 USE_TZ = True
 
+LANGUAGE_CODE = 'zh-hans'
+
+# LANGUAGES = (
+#     ('en', 'English'),
+#     ('zh-hans', 'Simplified Chinese'),
+# )
+
+
+# Lenguage support
 LANGUAGES = (
-    ('en', 'English'),
-    ('zh-hans', 'Simplified Chinese'),
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('it', _('Italian')),
+    ('zh-hans', _('Chinese')),
 )
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale/'),
+    # os.path.join(BASE_DIR, 'locale/'),
+    # os.path.join(BASE_DIR, 'musette/locale/'),
     os.path.join(BASE_DIR + "/musette/", 'locale'),
 )
 
