@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+9@6w=p!pw=x57l18t=q=jvve0lm%e(@z-vh3+w1y5hcs%tk-^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -167,3 +167,9 @@ HAYSTACK_CONNECTIONS = {
 
 
 MACHINA_FORUM_NAME = 'Forum'
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass

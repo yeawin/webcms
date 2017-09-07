@@ -83,3 +83,39 @@ https://github.com/mapeveri/django-musette
 https://github.com/mapeveri/django-musette/blob/master/docs/configuration.rst  
 
 
+## Wamp部署 http://blog.csdn.net/chao_8023/article/details/74495116
+download wamp
+$ pip install mod_wsgi
+
+$ mod_wsgi-express module-config
+## add to http.conf
+  LoadFile "c:/users/administrator/appdata/local/programs/python/python36/python36.dll"
+
+  LoadModule wsgi_module "c:/users/administrator/appdata/local/programs/python/python36/lib/site-packages/mod_wsgi/server/mod_wsgi.cp36-win_amd64.pyd"
+
+  WSGIPythonHome "c:/users/administrator/appdata/local/programs/python/python36"
+
+## add vhost.conf
+    <VirtualHost *:80>
+        WSGIScriptAlias / c:/mswang/webcms/forum/forum/wsgi.py  
+
+        ServerName forum.xmu.edu.cn
+        
+        DocumentRoot "c:/mswang/webcms/forum/"
+
+        <Directory />
+            Options FollowSymLinks
+            AllowOverride None
+        </Directory>
+
+        <Directory  "c:/mswang/webcms/forum/forum">
+            <Files wsgi.py>  
+            Require all granted  
+            </Files>
+        </Directory>
+    </VirtualHost>
+
+
+$ pip install mysqlclient
+
+$ 
