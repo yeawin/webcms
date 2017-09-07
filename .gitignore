@@ -6,3 +6,4 @@
 /webcms/yacms/__pycache__/*.pyc
 /webcms/yacms/migrations/__pycache__/*.pyc
 /forum/forum/wsgi.py
+/django-machina
