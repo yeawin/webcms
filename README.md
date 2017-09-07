@@ -77,10 +77,8 @@ http://code.ziqiangxuetang.com/django/django-multi-database.html
 pip install django-bower  
 python manage.py bower_install --allow-root  
 
-## BBS
-https://github.com/vicalloy/LBForum  
-https://github.com/mapeveri/django-musette  
-https://github.com/mapeveri/django-musette/blob/master/docs/configuration.rst  
+## BBS django-machina https://django-machina.readthedocs.io/en/stable/
+
 
 
 ## Wamp部署 http://blog.csdn.net/chao_8023/article/details/74495116
