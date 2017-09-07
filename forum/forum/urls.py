@@ -1,7 +1,7 @@
-"""webcms URL Configuration
+"""forum URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.11/topics/http/urls/
+    https://docs.djangoproject.com/en/1.10/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,17 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from machina.app import board
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^', include('musette.urls')),
+    url(r'^forum/', include(board.urls)),
 ]
-
-
-from django.conf import settings
-
-if settings.DEBUG:
-    from django.conf.urls.static import static
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
