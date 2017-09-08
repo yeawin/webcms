@@ -8,3 +8,4 @@
 /forum/forum/wsgi.py
 /django-machina
 /forum/forum/local_settings.py
+/forum/forum/__pycache__/*.pyc
